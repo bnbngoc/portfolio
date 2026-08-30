@@ -18,7 +18,7 @@ export default function HomePage() {
     <main>
       <section className="intro wrap" aria-labelledby="intro-title">
         <p className="eyebrow">Entrepreneurship / Product archive</p>
-        <h1 id="intro-title">Entrepreneurship is about acquiring skills, beliefs, and character traits.</h1>
+        <h1 id="intro-title">&quot;Entrepreneurship is about acquiring skills, beliefs, and character traits.&quot;</h1>
         <p className="hero-citation">Alex Hormozi, <i>$100M Offers</i></p>
         <p className="intro-copy">A record of my experiences in business, and the learnings that followed.</p>
       </section>

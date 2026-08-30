@@ -16,9 +16,9 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const index = projects.indexOf(project); const previous = projects[index - 1]; const next = projects[index + 1];
   const phase = project.status === "Ongoing" ? "Built → Tested → Learned → Iterating" : project.status === "Deprioritized" ? "Built → Tested → Learned → Deprioritized" : project.status === "Completed" ? "Built → Tested → Completed" : "Built → Tested → Learned → Stopped";
   return <main className="project-page wrap">
-    <ProjectVisual project={project} />
-    {project.links && project.links.length > 0 && <section className="project-links project-links-top" aria-labelledby="links-title"><p className="eyebrow">Important links</p><h2 id="links-title">Explore the work</h2><div>{project.links.map((link) => <a key={link.href} className="text-link" href={link.href} target="_blank" rel="noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}</div></section>}
     <header className="project-header"><p className="eyebrow">{project.date}</p><div className="project-title-row"><h1>{project.name}</h1><span className={`status status-${project.status.toLowerCase()}`}>{project.status}</span></div><p className="project-role">{project.role}</p>{project.skills.length > 0 && <p className="metadata">{project.skills.join(" · ")}</p>}</header>
+    {project.links && project.links.length > 0 && <section className="project-links project-links-top" aria-label="Important links"><p className="eyebrow">Important links</p><div>{project.links.map((link) => <a key={link.href} className="text-link" href={link.href} target="_blank" rel="noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}</div></section>}
+    <ProjectVisual project={project} />
     <div className="phase" aria-label={`Project status: ${phase}`}>{phase.split(" → ").map((item, i) => <span key={item}>{item}{i < phase.split(" → ").length - 1 && <i aria-hidden="true">→</i>}</span>)}</div>
     <section className="project-summary"><p>{project.shortDescription}</p></section>
     <div className="detail-grid">
