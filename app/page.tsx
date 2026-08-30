@@ -3,7 +3,7 @@ import "./home.css";
 import { projects } from "@/data/projects";
 import { ProjectVisual } from "@/components/project-visual";
 
-const featuredSlugs = ["seeforme", "stickerwords", "actionlock", "megatrans", "international-ielts"];
+const featuredSlugs = ["seeforme", "stickerwords", "actionlock", "megatrans", "international-ielts", "organizational-culture"];
 const featuredProjects = featuredSlugs.map((slug) => projects.find((project) => project.slug === slug)).filter(Boolean);
 const otherProjects = projects
   .filter((project) => !featuredSlugs.includes(project.slug))

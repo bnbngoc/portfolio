@@ -20,7 +20,7 @@ export const projects: Project[] = [
     traction: [{ value: "20+", label: "members led" }, { value: "12", label: "leadership-training sessions" }],
     evidence: [{ label: "Training-program record", detail: "Recording and documentation of the leadership training program.", available: true, image: { src: projectAsset("bo-dua-training.png"), alt: "Bó Đũa training program documentation" } }],
     learning: ["Recruitment.", "Team leadership.", "Program design.", "Needs assessment.", "Organizational problem-solving."], status: "Completed", decision: "Completed July 2023–June 2024.",
-    image: { src: projectAsset("bo-dua.png"), alt: "Bó Đũa organizational culture program" }, links: [{ label: "Facebook fanpage", href: "https://www.facebook.com/profile.php?id=61558104513214" }]
+    featuredTitle: "Bó Đũa", featuredDescription: "A social project building stronger, more engaged extracurricular organizations through a 12-session internal training program.", image: { src: projectAsset("bo-dua.png"), alt: "Bó Đũa organizational culture program" }, context: "Organizational culture program", links: [{ label: "Facebook fanpage", href: "https://www.facebook.com/profile.php?id=61558104513214" }]
   },
   {
     slug: "international-ielts", name: "Lean Monkey Tutor", date: "Aug — Dec 2025", role: "Co-founder · Team Lead", skills: ["Product Discovery", "Market Research", "Validation"],
