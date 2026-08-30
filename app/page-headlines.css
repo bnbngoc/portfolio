@@ -1,0 +1,12 @@
+.about-page h1,
+.contact-page h1 {
+  font-size: clamp(3.3rem, 7.8vw, 8rem);
+  line-height: .88;
+}
+
+@media (max-width: 760px) {
+  .about-page h1,
+  .contact-page h1 {
+    font-size: clamp(3.1rem, 13vw, 4.8rem);
+  }
+}
