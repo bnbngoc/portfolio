@@ -1,0 +1,19 @@
+.contact-details {
+  max-width: 600px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-details p {
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-details a {
+  display: block;
+  padding: 15px 0;
+}
+
+.contact-details a:hover,
+.contact-details a:focus-visible {
+  color: var(--muted);
+}

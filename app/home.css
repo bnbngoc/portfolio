@@ -1,5 +1,7 @@
 .intro h1 {
   max-width: 1150px;
+  font-size: clamp(3.3rem, 7.8vw, 8rem);
+  line-height: .88;
 }
 
 .intro-copy {
@@ -73,7 +75,7 @@
 
 .other-work-list a {
   display: grid;
-  grid-template-columns: minmax(180px, .45fr) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(180px, .45fr) minmax(0, 1fr) auto auto;
   gap: 24px;
   align-items: baseline;
   padding: 19px 0;
@@ -94,6 +96,14 @@
   color: var(--muted);
   font-style: normal;
   transition: transform .2s ease;
+}
+
+.other-work-list time {
+  color: var(--muted);
+  font: 10px var(--mono);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .other-work-list a:hover i,
@@ -155,6 +165,9 @@
 }
 
 @media (max-width: 760px) {
+  .intro h1 {
+    font-size: clamp(3.1rem, 13vw, 4.8rem);
+  }
   .featured-project-grid,
   .direction {
     grid-template-columns: 1fr;
@@ -174,8 +187,12 @@
   }
 
   .other-work-list i {
-    grid-row: 1 / 3;
+    grid-row: 1 / 4;
     grid-column: 2;
+  }
+
+  .other-work-list time {
+    grid-column: 1 / 2;
   }
 
   .visual-featured {

@@ -3,9 +3,15 @@ import "./home.css";
 import { projects } from "@/data/projects";
 import { ProjectVisual } from "@/components/project-visual";
 
-const featuredSlugs = ["seeforme", "stickerwords", "actionlock", "international-ielts", "organizational-culture"];
+const featuredSlugs = ["seeforme", "stickerwords", "actionlock", "megatrans", "international-ielts"];
 const featuredProjects = featuredSlugs.map((slug) => projects.find((project) => project.slug === slug)).filter(Boolean);
-const otherProjects = projects.filter((project) => !featuredSlugs.includes(project.slug));
+const otherProjects = projects
+  .filter((project) => !featuredSlugs.includes(project.slug))
+  .sort((a, b) => startYear(a.date) - startYear(b.date));
+
+function startYear(date: string) {
+  return Number(date.match(/20\d{2}/)?.[0] ?? 0);
+}
 
 export default function HomePage() {
   return (
@@ -13,12 +19,12 @@ export default function HomePage() {
       <section className="intro wrap" aria-labelledby="intro-title">
         <p className="eyebrow">Entrepreneurship / Product archive</p>
         <h1 id="intro-title">Entrepreneurship is about acquiring skills, beliefs, and character traits.</h1>
-        <p className="intro-copy">A record of my experiences in business, and the learnings that followed.</p>
         <p className="hero-citation">Alex Hormozi, <i>$100M Offers</i></p>
+        <p className="intro-copy">A record of my experiences in business, and the learnings that followed.</p>
       </section>
 
       <section id="work" className="featured-work wrap" aria-labelledby="featured-title">
-        <div className="section-heading"><p className="eyebrow">Selected work</p><h2 id="featured-title">Featured projects</h2></div>
+        <div className="section-heading"><p className="eyebrow">Selected work</p><h2 id="featured-title">Featured Startups / Products</h2></div>
         <div className="featured-project-grid">
           {featuredProjects.map((project) => project && <FeaturedProject project={project} key={project.slug} />)}
         </div>
@@ -27,7 +33,7 @@ export default function HomePage() {
       <section className="other-work wrap" aria-labelledby="other-work-title">
         <div className="section-heading"><p className="eyebrow">Archive</p><h2 id="other-work-title">Other works</h2></div>
         <ul className="other-work-list">
-          {otherProjects.map((project) => <li key={project.slug}><Link href={`/work/${project.slug}`}><strong>{project.name}</strong><span>{project.shortDescription}</span><i aria-hidden="true">→</i></Link></li>)}
+          {otherProjects.map((project) => <li key={project.slug}><Link href={`/work/${project.slug}`}><strong>{project.name}</strong><span>{project.shortDescription}</span><time dateTime={String(startYear(project.date))}>{project.date}</time><i aria-hidden="true">→</i></Link></li>)}
         </ul>
       </section>
 
