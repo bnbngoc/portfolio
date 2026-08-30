@@ -1,0 +1,18 @@
+.project-links {
+  border-top: 1px solid var(--line);
+  padding: 18px 0 105px;
+}
+
+.project-links h2 {
+  margin: 10px 0 35px;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  font-weight: 400;
+  letter-spacing: -.055em;
+  line-height: .94;
+}
+
+.project-links > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 28px;
+}

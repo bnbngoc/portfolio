@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../../project-links.css";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Gallery } from "@/components/gallery";
@@ -26,6 +27,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     </div>
     {project.traction && <section className="metrics" aria-labelledby="traction-title"><p className="eyebrow">Traction / evidence</p><h2 id="traction-title">The record</h2><div className="metrics-grid">{project.traction.map((metric) => <div key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><span>{metric.label}</span>{metric.note && <small>{metric.note}</small>}</div>)}</div></section>}
     <Gallery project={project} />
+    {project.links && project.links.length > 0 && <section className="project-links" aria-labelledby="links-title"><p className="eyebrow">External links</p><h2 id="links-title">Explore the work</h2><div>{project.links.map((link) => <a key={link.href} className="text-link" href={link.href} target="_blank" rel="noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}</div></section>}
     <section className="learning"><p className="eyebrow">Reflection</p><h2>What stayed with me</h2><List items={project.learning} /></section>
     <section className="decision"><p className="eyebrow">Outcome</p><p>{project.decision}</p></section>
     {project.nextProject && <section className="next-connection"><p className="eyebrow">What came next</p><p>{project.nextProject.connection}</p><Link href={`/work/${project.nextProject.slug}`} className="text-link">{project.nextProject.name} <span aria-hidden="true">↗</span></Link></section>}

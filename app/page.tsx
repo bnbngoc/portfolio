@@ -3,7 +3,7 @@ import "./home.css";
 import { projects } from "@/data/projects";
 import { ProjectVisual } from "@/components/project-visual";
 
-const featuredSlugs = ["devhouse", "seeforme", "stickerwords", "actionlock"];
+const featuredSlugs = ["seeforme", "stickerwords", "actionlock", "international-ielts", "organizational-culture"];
 const featuredProjects = featuredSlugs.map((slug) => projects.find((project) => project.slug === slug)).filter(Boolean);
 const otherProjects = projects.filter((project) => !featuredSlugs.includes(project.slug));
 
@@ -12,8 +12,9 @@ export default function HomePage() {
     <main>
       <section className="intro wrap" aria-labelledby="intro-title">
         <p className="eyebrow">Entrepreneurship / Product archive</p>
-        <h1 id="intro-title">I turn opportunities into businesses, and questions into things worth pursuing.</h1>
-        <p className="intro-copy">Entrepreneur exploring the intersection of science, technology, and high-impact innovation.</p>
+        <h1 id="intro-title">Entrepreneurship is about acquiring skills, beliefs, and character traits.</h1>
+        <p className="intro-copy">A record of my experiences in business, and the learnings that followed.</p>
+        <p className="hero-citation">Alex Hormozi, <i>$100M Offers</i></p>
       </section>
 
       <section id="work" className="featured-work wrap" aria-labelledby="featured-title">
@@ -51,6 +52,6 @@ function FeaturedProject({ project }: { project: (typeof projects)[number] }) {
   const description = project.featuredDescription ?? project.shortDescription;
   return <article className="featured-project">
     <Link href={`/work/${project.slug}`} className="project-image-link" aria-label={`Read ${title}`}><ProjectVisual project={project} variant="featured" /></Link>
-    <div className="featured-project-copy"><h3><Link href={`/work/${project.slug}`}>{title}</Link></h3><p>{description}</p><Link className="text-link" href={`/work/${project.slug}`}>View project <span aria-hidden="true">→</span></Link></div>
+    <div className="featured-project-copy">{project.context && <p className="eyebrow featured-context">{project.context}</p>}<h3><Link href={`/work/${project.slug}`}>{title}</Link></h3><p>{description}</p><Link className="text-link" href={`/work/${project.slug}`}>View work <span aria-hidden="true">→</span></Link></div>
   </article>;
 }
