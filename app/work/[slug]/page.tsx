@@ -21,13 +21,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     <section className="project-summary"><p>{project.shortDescription}</p></section>
     <div className="detail-grid">
       {project.problem && <DetailSection title="The problem"><p>{project.problem}</p></DetailSection>}
-      <DetailSection title="What I built"><p>{project.whatIBuilt}</p></DetailSection>
-      <DetailSection title="My contribution"><List items={project.contribution} /></DetailSection>
+      <DetailSection title="What I worked on"><p>{project.whatIBuilt}</p></DetailSection>
+      <DetailSection title="Contribution"><List items={project.contribution} /></DetailSection>
     </div>
     {project.traction && <section className="metrics" aria-labelledby="traction-title"><p className="eyebrow">Traction / evidence</p><h2 id="traction-title">The record</h2><div className="metrics-grid">{project.traction.map((metric) => <div key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><span>{metric.label}</span>{metric.note && <small>{metric.note}</small>}</div>)}</div></section>}
     <Gallery project={project} />
-    <section className="learning"><p className="eyebrow">What I learned</p><h2>What stayed with me</h2><List items={project.learning} /></section>
-    <section className="decision"><p className="eyebrow">What happened</p><p>{project.decision}</p></section>
+    <section className="learning"><p className="eyebrow">Reflection</p><h2>What stayed with me</h2><List items={project.learning} /></section>
+    <section className="decision"><p className="eyebrow">Outcome</p><p>{project.decision}</p></section>
     {project.nextProject && <section className="next-connection"><p className="eyebrow">What came next</p><p>{project.nextProject.connection}</p><Link href={`/work/${project.nextProject.slug}`} className="text-link">{project.nextProject.name} <span aria-hidden="true">↗</span></Link></section>}
     <nav className="project-nav" aria-label="Project navigation">{previous ? <Link href={`/work/${previous.slug}`}><span>Previous</span>{previous.name}</Link> : <span />}{next ? <Link href={`/work/${next.slug}`} className="next"><span>Next</span>{next.name}</Link> : <span />}</nav>
   </main>;
