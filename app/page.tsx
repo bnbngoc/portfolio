@@ -3,7 +3,7 @@ import "./home.css";
 import { projects } from "@/data/projects";
 import { ProjectVisual } from "@/components/project-visual";
 
-const featuredSlugs = ["seeforme", "stickerwords", "actionlock", "megatrans", "international-ielts", "organizational-culture"];
+const featuredSlugs = ["seeforme", "stickerwords", "actionlock", "international-ielts", "organizational-culture"];
 const featuredProjects = featuredSlugs.map((slug) => projects.find((project) => project.slug === slug)).filter(Boolean);
 const otherProjects = projects
   .filter((project) => !featuredSlugs.includes(project.slug))
@@ -24,7 +24,7 @@ export default function HomePage() {
       </section>
 
       <section id="work" className="featured-work wrap" aria-labelledby="featured-title">
-        <div className="section-heading"><p className="eyebrow">Selected work</p><h2 id="featured-title">Featured Startups / Products</h2></div>
+        <div className="section-heading"><p className="eyebrow">Selected record</p><h2 id="featured-title">Featured startups / products</h2><p className="featured-intro">Selected products developed at DevHouse appear alongside independent ventures and Bó Đũa, a social project.</p></div>
         <div className="featured-project-grid">
           {featuredProjects.map((project) => project && <FeaturedProject project={project} key={project.slug} />)}
         </div>
@@ -35,6 +35,17 @@ export default function HomePage() {
         <ul className="other-work-list">
           {otherProjects.map((project) => <li key={project.slug}><Link href={`/work/${project.slug}`}><strong>{project.name}</strong><span>{project.shortDescription}</span><time dateTime={String(startYear(project.date))}>{project.date}</time><i aria-hidden="true">→</i></Link></li>)}
         </ul>
+      </section>
+
+      <section className="personal-channels wrap" aria-labelledby="personal-channels-title">
+        <div><p className="eyebrow">Personal archive</p><h2 id="personal-channels-title">Channels I run</h2></div>
+        <div className="personal-channel-links">
+          <a className="text-link" href="https://www.youtube.com/@rowavery.str26" target="_blank" rel="noreferrer">YouTube / Rowavery <span aria-hidden="true">↗</span></a>
+          <a className="text-link" href="https://www.youtube.com/@brainrotfighter-m8q" target="_blank" rel="noreferrer">YouTube / Brainrot Fighter <span aria-hidden="true">↗</span></a>
+          <a className="text-link" href="https://www.tiktok.com/@ngocbao28528?lang=en" target="_blank" rel="noreferrer">TikTok / @ngocbao28528 <span aria-hidden="true">↗</span></a>
+          <a className="text-link" href="https://www.instagram.com/nb.struggler/" target="_blank" rel="noreferrer">Instagram / @nb.struggler <span aria-hidden="true">↗</span></a>
+          <a className="text-link" href="https://www.instagram.com/rowavery.str/" target="_blank" rel="noreferrer">Instagram / @rowavery.str <span aria-hidden="true">↗</span></a>
+        </div>
       </section>
 
       <section className="direction wrap" aria-labelledby="direction-title">
