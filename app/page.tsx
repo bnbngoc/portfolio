@@ -37,17 +37,6 @@ export default function HomePage() {
         </ul>
       </section>
 
-      <section className="personal-channels wrap" aria-labelledby="personal-channels-title">
-        <div><p className="eyebrow">Personal archive</p><h2 id="personal-channels-title">Channels I run</h2></div>
-        <div className="personal-channel-links">
-          <a className="text-link" href="https://www.youtube.com/@rowavery.str26" target="_blank" rel="noreferrer">YouTube / Rowavery <span aria-hidden="true">↗</span></a>
-          <a className="text-link" href="https://www.youtube.com/@brainrotfighter-m8q" target="_blank" rel="noreferrer">YouTube / Brainrot Fighter <span aria-hidden="true">↗</span></a>
-          <a className="text-link" href="https://www.tiktok.com/@ngocbao28528?lang=en" target="_blank" rel="noreferrer">TikTok / @ngocbao28528 <span aria-hidden="true">↗</span></a>
-          <a className="text-link" href="https://www.instagram.com/nb.struggler/" target="_blank" rel="noreferrer">Instagram / @nb.struggler <span aria-hidden="true">↗</span></a>
-          <a className="text-link" href="https://www.instagram.com/rowavery.str/" target="_blank" rel="noreferrer">Instagram / @rowavery.str <span aria-hidden="true">↗</span></a>
-        </div>
-      </section>
-
       <section className="direction wrap" aria-labelledby="direction-title">
         <div><p className="eyebrow">Direction</p><h2 id="direction-title">Entrepreneurship across disciplines.</h2></div>
         <div className="direction-copy">

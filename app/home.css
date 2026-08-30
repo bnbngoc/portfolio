@@ -126,29 +126,6 @@
   padding: 25px 0 130px;
 }
 
-.personal-channels {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 45px;
-  border-top: 1px solid var(--line);
-  padding: 25px 0 130px;
-}
-
-.personal-channels h2 {
-  margin: 10px 0 0;
-  font-size: clamp(2.4rem, 5vw, 4.8rem);
-  font-weight: 400;
-  letter-spacing: -.055em;
-  line-height: .94;
-}
-
-.personal-channel-links {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: start;
-  gap: 18px 28px;
-}
-
 .direction h2,
 .home-contact h2 {
   margin: 10px 0 0;
@@ -198,8 +175,7 @@
     font-size: clamp(3.1rem, 13vw, 4.8rem);
   }
   .featured-project-grid,
-  .direction,
-  .personal-channels {
+  .direction {
     grid-template-columns: 1fr;
   }
 
