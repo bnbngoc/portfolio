@@ -84,7 +84,8 @@ export const projects: Project[] = [
   {
     slug: "lotus-hackathon", name: "Lotus Hackathon", date: "2025", role: "Team Member", skills: ["AI Integration", "Assistive Technology", "Rapid Execution"],
     shortDescription: "An AI-integrated mobile tool for helping visually impaired users interpret images in real time.", visualLabel: "Hackathon evidence", visualKind: "assistive",
-    whatIBuilt: "An AI-integrated mobile tool built within 36 hours for visually impaired users to interpret images in real time.", contribution: ["Worked on the product as a team member."], traction: [{ value: "36", label: "hours to build" }, { value: "3rd place", label: "Best Use of TRAE AI" }], evidence: [{ label: "Competition result", detail: "Add competition or project documentation when available." }], learning: ["Rapid execution.", "Team-based building.", "AI integration.", "Assistive technology."], status: "Completed", decision: "Built for the 2025 Lotus Hackathon."
+    whatIBuilt: "An AI-integrated mobile tool built within 36 hours for visually impaired users to interpret images in real time.", contribution: ["Worked on the product as a team member."], traction: [{ value: "36", label: "hours to build" }, { value: "Top 3", label: "TRAE AI track" }], evidence: [{ label: "Competition result", detail: "The project’s Lotus Hackathon listing is available through Devpost." }], learning: ["Rapid execution.", "Team-based building.", "AI integration.", "Assistive technology."], status: "Completed", decision: "Built for the 2025 Lotus Hackathon.",
+    links: [{ label: "View on Devpost", href: "https://devpost.com/software/count-me-in-r1on5b" }]
   },
   {
     slug: "seeforme", name: "SeeForMe", date: "2026", role: "DevHouse product", skills: ["User Research", "Feature Prioritization", "Accessibility"],
