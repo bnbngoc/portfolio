@@ -5,6 +5,7 @@ export type Project = {
   visualLabel: string; visualKind: string; problem?: string; whatIBuilt: string; contribution: string[];
   traction?: Metric[]; evidence: EvidenceItem[]; learning: string[]; status: "Ongoing" | "Stopped" | "Deprioritized" | "Launched" | "Completed";
   decision: string; nextProject?: { name: string; slug: string; connection: string };
+  featuredTitle?: string; featuredDescription?: string;
 };
 
 export const projects: Project[] = [
@@ -53,6 +54,16 @@ export const projects: Project[] = [
     learning: ["Customer validation.", "Product positioning.", "Go-to-market.", "Organic growth.", "The effect of team capacity on business sustainability."], status: "Stopped", decision: "Stopped because the activity frequency and intensity became too demanding for a team of 3."
   },
   {
+    slug: "devhouse", name: "DevHouse", date: "2026 — Present", role: "Co-founder · Product & Growth Associate", skills: ["Product Discovery", "Pricing", "Go-to-Market"],
+    shortDescription: "A rapid-sprint SaaS startup, working across discovery, validation, product development, go-to-market, and growth.", visualLabel: "Product portfolio documentation", visualKind: "research",
+    whatIBuilt: "Four fast-sprint SaaS mobile app projects, with approximately three weeks per product.",
+    contribution: ["Led product discovery for 3 products through user interviews, market research, and competitor analysis.", "Synthesized 100+ customer conversations into feature prioritization and product-roadmap decisions.", "Defined pricing strategies for 2 products, balancing cost constraints, revenue potential, and long-term profitability.", "Worked across discovery, validation, development, go-to-market, and growth."],
+    traction: [{ value: "4", label: "rapid-sprint SaaS products" }, { value: "~3 weeks", label: "per product" }, { value: "3", label: "products with discovery led" }, { value: "100+", label: "customer conversations" }, { value: "2", label: "products with pricing strategies defined" }],
+    evidence: [{ label: "Product portfolio documentation", detail: "Add original product, research, or launch evidence when available." }],
+    learning: ["How to work across the product lifecycle in fast product cycles.", "How research can inform prioritization and roadmap decisions.", "How pricing needs to balance cost constraints, revenue potential, and long-term profitability."], status: "Ongoing", decision: "DevHouse is ongoing.",
+    featuredDescription: "Product and marketing work across early-stage SaaS products, from customer discovery and product evaluation to pricing and go-to-market."
+  },
+  {
     slug: "momo-fulbright", name: "Get Your 2 Ti Well-Spent", date: "Nov — Dec 2025", role: "Product Team Member", skills: ["User Interviews", "Retention Analysis", "Onboarding"],
     shortDescription: "A MoMo × Fulbright MVP helping students plan university courses based on their career goals.", visualLabel: "MVP documentation", visualKind: "program",
     whatIBuilt: "An MVP platform for course planning based on career goals.", contribution: ["Participated in product development.", "Conducted 5 user interviews.", "Identified low retention and recommended clearer onboarding improvements."],
@@ -69,7 +80,8 @@ export const projects: Project[] = [
     problem: "Some apps are not compatible with screen readers, leaving elements difficult or impossible for blind users to interpret.", whatIBuilt: "A mobile app triggered by pressing the up and down volume buttons simultaneously to explain an otherwise inaccessible element.",
     contribution: ["Conducted deep user research in an unfamiliar problem space.", "Spoke with approximately 30 blind users, including 1 in-person conversation.", "Worked through what to build and which features to prioritize."], traction: [{ value: "~30", label: "blind users spoken with" }, { value: "1", label: "in-person conversation" }],
     evidence: [{ label: "Google Play listing", detail: "Released product listing.", available: true }], learning: ["How to enter a completely unfamiliar user world.", "How to conduct deep user research.", "How difficult feature prioritization can be in a novel market.", "How external technological developments can change a product’s opportunity."], status: "Stopped", decision: "Stopped after Gemini released a similar feature a few weeks after release.",
-    nextProject: { name: "Megatrans", slug: "megatrans", connection: "The next product investigation focused more deeply on competitor research, pricing, and business economics." }
+    nextProject: { name: "Megatrans", slug: "megatrans", connection: "The next product investigation focused more deeply on competitor research, pricing, and business economics." },
+    featuredTitle: "Accessibility App", featuredDescription: "A mobile app for blind users when screen readers cannot interpret an app element, grounded in direct conversations with approximately 30 blind users."
   },
   {
     slug: "megatrans", name: "Megatrans", date: "2026", role: "DevHouse product", skills: ["Competitor Research", "Pricing", "Financial Planning"],
@@ -82,12 +94,14 @@ export const projects: Project[] = [
     shortDescription: "A language-learning camera app that turns captured objects into vocabulary stickers and spaced-repetition flashcards.", visualLabel: "App / GTM documentation", visualKind: "marketplace",
     whatIBuilt: "A language-learning camera app where users capture an object, turn it into a sticker with target-language vocabulary, and review it through spaced repetition inspired by Anki.", contribution: ["Improved on an existing competitor concept.", "Added the spaced-repetition review feature.", "Led GTM, prospecting, and affiliate acquisition."],
     traction: [{ value: "1,300+", label: "prospects" }, { value: "100+", label: "app visits" }, { value: "10+", label: "countries" }, { value: "2", label: "affiliate influencers" }], evidence: [{ label: "GTM documentation", detail: "Add campaign or product evidence when available." }], learning: ["GTM.", "Prospecting.", "International acquisition.", "Affiliate marketing.", "The importance of motivation and sustainable team execution."], status: "Stopped", decision: "The team moved on because of marketing and team-motivation difficulties.",
-    nextProject: { name: "ActionLock", slug: "actionlock", connection: "Growth work continued through viral content, paid acquisition, funnel analysis, and engagement improvements." }
+    nextProject: { name: "ActionLock", slug: "actionlock", connection: "Growth work continued through viral content, paid acquisition, funnel analysis, and engagement improvements." },
+    featuredDescription: "A language-learning camera app, paired with go-to-market work across prospecting, international acquisition, and affiliate marketing."
   },
   {
     slug: "actionlock", name: "ActionLock", date: "2026 — Present", role: "DevHouse product", skills: ["Content", "Paid Acquisition", "Funnel Analysis"],
     shortDescription: "An app that creates friction around distracting apps: users unlock them only after completing exercises.", visualLabel: "Product / funnel evidence", visualKind: "assistive",
-    problem: "People struggling with doomscrolling need a way to create friction between themselves and distracting applications.", whatIBuilt: "An app that locks distracting apps until a user performs push-ups, squats, or other in-app exercises to unlock them.", contribution: ["Worked on marketing and created viral videos.", "Learned multi-platform content and paid advertising.", "Worked on the conversion funnel and product engagement."], traction: [{ value: "Hundreds", label: "installations" }, { value: "0", label: "paid users yet" }], evidence: [{ label: "Product documentation", detail: "Add product, content, or funnel evidence when available." }], learning: ["Viral content.", "Multi-platform content.", "Paid acquisition.", "Funnel analysis.", "Conversion optimization.", "Product engagement."], status: "Ongoing", decision: "Currently improving the funnel, engagement, and conversion."
+    problem: "People struggling with doomscrolling need a way to create friction between themselves and distracting applications.", whatIBuilt: "An app that locks distracting apps until a user performs push-ups, squats, or other in-app exercises to unlock them.", contribution: ["Worked on marketing and created viral videos.", "Learned multi-platform content and paid advertising.", "Worked on the conversion funnel and product engagement."], traction: [{ value: "Hundreds", label: "installations" }, { value: "0", label: "paid users yet" }], evidence: [{ label: "Product documentation", detail: "Add product, content, or funnel evidence when available." }], learning: ["Viral content.", "Multi-platform content.", "Paid acquisition.", "Funnel analysis.", "Conversion optimization.", "Product engagement."], status: "Ongoing", decision: "Currently improving the funnel, engagement, and conversion.",
+    featuredDescription: "An app that makes distracting apps available only after movement, with ongoing work on content, acquisition, engagement, and conversion."
   },
   {
     slug: "innocent-eyes", name: "Innocent Eyes", date: "2026 — Present", role: "Founder", skills: ["Resale", "Branding", "Social Content"],
